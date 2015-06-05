@@ -1,0 +1,168 @@
+/* default: white background, sans serif font */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    line-height: 21px;
+    background: #434343;
+    font-family: "Arial", "Helvetica", sans-serif;
+}
+
+/* subsection titles for the parameter area */
+legend {
+    color: #353535;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    display: block;
+}
+
+fieldset {
+    margin: 10px 15px;
+}
+
+/* region to display an error */
+#error {
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    display: none;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.content-container {
+    position: absolute;
+    width: 860px;
+    height: 600px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0 0 10px #000;
+}
+
+/* canvas to perform 2d graphcis */
+#drawing_area {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+}
+
+/* container to display editable parameters */
+#param_area {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 260px;
+    height: 600px;
+    border-left: 2px dashed #888;
+    text-align: left;
+    padding: 0 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.clearfix {
+    clear: both;
+}
+
+#edit-object {
+    display: none;
+}
+
+input[type='text'],
+input[type='color'],
+input[type='number'],
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 4px;
+    height: 30px;
+    line-height: 1;
+    font-size: 0.8em;
+    display: block;
+}
+
+input[type='range'] {
+    cursor: move;
+    text-align: center;
+    width: 90%;
+    margin: 5px auto 0 auto;
+    display: block;
+}
+
+.param-curve {
+    display: none;
+}
+
+.label {
+    margin: 0 5% 0 5%;
+    font-size: .8em
+}
+
+label {
+    display: block;
+}
+
+#ticks {
+    overflow: hidden;
+}
+
+#ticks p,
+#ticks input {
+    float: left;
+    vertical-align: middle;
+}
+
+.show-range,
+.show-radius {
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 0.65em;
+}
+
+input[type='color'] {
+    cursor: pointer;
+    margin: 5px auto 10px auto;
+}
+
+input {
+    background: #fff;
+    border: 1px solid #888;
+}
+
+input:focus,
+input:hover {
+    border-color: #129fea;
+    outline: 0;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background: #ccc;
+}
+
+button:focus,
+button:hover {
+    border: 0;
+    outline: 0;
+    background: #129fea;
+    color: #fff;
+}

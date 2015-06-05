@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <!--
+     *
+     * JavaScript / Canvas teaching framwork 
+     * (C)opyright Hartmut Schirmacher, hschirmacher.beuth-hochschule.de 
+     *
+    -->
+
+    <title>CG2 A1: Lines, Curves &amp; Canvas</title>
+
+    <!-- import main module using RequireJS -->
+    <script data-main="js/main.js" src="js/lib/require.js"></script>
+
+    <!-- import style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+<!-- this element will be used to diplay errors -->
+<pre id="error"></pre>
+
+<!-- centered region with drawing canvas and parameter area -->
+<div class="content-container">
+
+    <canvas id="drawing_area" width="600" height="600">
+        <!-- NOTE: the "position:relative" is required due to the current  
+             implementation of mouse coordinate processing in module "util". -->
+        If you see this text, your browser probably does not
+        support the HTML5 canvas 2D drawing context.
+    </canvas>
+
+    <form id="param_area">
+        <fieldset id="create-object">
+            <legend>create objects</legend>
+            <button class="objectCreate" id="line" type="button">New Line</button>
+            <button class="objectCreate" id="circle" type="button">New Circle</button>
+            <button class="objectCreate" id="parametric-curve" type="button">New ParametricCurve</button>
+            <button class="objectCreate" id="bezier-curve" type="button">New BezierCurve</button>
+        </fieldset>
+        <fieldset id="edit-object">
+            <legend>edit active object</legend>
+            <label class="object line circle parametric-curve bezier-curve">
+                <span class="label">line width</span>
+                <input type="range" class="objectManipulate" id="show-range" name="line-width" min="1" max="20" step="1"
+                       value="2">
+                <span class="show-range">2</span>
+            </label>
+            <label class="object circle">
+                <span class="label">radius</span>
+                <input type="range" class="objectManipulate" id="show-radius" name="line-width" min="1" max="300"
+                       step="1"
+                       value="2">
+                <span class="show-radius">2</span>
+            </label>
+            <label class="object line circle parametric-curve bezier-curve">
+                <span class="label">line color</span>
+                <input type="color" class="objectManipulate" id="color-picker" name="line-color" value="#129fea">
+            </label>
+            <label class="object parametric-curve">
+                <span class="label">x(t)</span>
+                <input type="text" data-manipulate="fOfT" id="function1" class="function objectManipulate"
+                       name="x-function" placeholder="350 + 100 * Math.sin(t)">
+            </label>
+            <label class="object parametric-curve">
+                <span class="label">y(t)</span>
+                <input type="text" data-manipulate="gOfT" id="function2" class="function objectManipulate"
+                       name="y-function" placeholder="150 + 100 * Math.sin(t)">
+            </label>
+            <label class="object parametric-curve">
+                <span class="label">min t</span>
+                <input type="number" id="minimum-t" data-manipulate="tMin" class="manipulateInput objectManipulate"
+                       name="min-t" placeholder="1">
+            </label>
+            <label class="object parametric-curve">
+                <span class="label">max t</span>
+                <input type="number" id="maximum-t" data-manipulate="tMax" class="manipulateInput objectManipulate"
+                       name="max-t" placeholder="8">
+            </label>
+            <label class="object parametric-curve bezier-curve">
+                <span class="label">segments</span>
+                <input type="number" id="segment-amount" data-manipulate="segments"
+                       class="manipulateInput objectManipulate" name="segments" placeholder="20">
+            </label>
+            <label class="object parametric-curve bezier-curve">
+                <span class="label">ticks</span>
+                <input type="checkbox" id="tick-marker" data-manipulate="ticks" class="objectManipulate" name="ticks">
+            </label>
+        </fieldset>
+    </form>
+
+    <div class="clearfix"></div>
+</div>
+
+</body>
+</html>
